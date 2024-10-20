@@ -1,0 +1,7 @@
+function main(workbook: ExcelScript.Workbook, numRows: number) {
+	let selectedSheet = workbook.getActiveWorksheet();
+	// Auto fit the columns of all cells on selectedSheet
+	selectedSheet.getRange().getFormat().autofitColumns();
+	// Freeze rows dynamically based on the numRows variable
+	selectedSheet.getFreezePanes().freezeRows(numRows);
+}

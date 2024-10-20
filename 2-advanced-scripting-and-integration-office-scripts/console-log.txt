@@ -1,0 +1,17 @@
+function main(workbook: ExcelScript.Workbook) {
+  let sheet = workbook.getActiveWorksheet();
+  let range = sheet.getRange("A1:A5");
+
+  // Calculate the sum of the numbers in the range
+  let sum = 0;
+  let values = range.getValues();
+
+  // Loop through each value in the range
+  for (let i = 0; i < values.length; i++) {
+    let value = values[i][0]; // Access the first element in each array (row)
+    sum += value; // Add the value to the sum
+  }
+
+  // Log the final sum to the console
+  console.log("The final sum of A1:A5 is: " + sum);
+}
